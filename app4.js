@@ -1,24 +1,19 @@
 export function bodlogo4(){
-        
-    function gcd(a, b) {
-        while (b !== 0) {
-            let temp = b;
-            b = a % b;
-            a = temp;
-            console.log(a, b);
+    const arr = [1, 6, 7, 3, 2]
+    let temp = arr[0];
+    for(let i = 1; i < arr.length; i++){
+        temp = hb(temp, arr[i]);
+    }
+    function hb(a, b){
+        let aa = a;
+        let bb = b;
+        let uldegdel;
+        while(bb != 0){
+            uldegdel = aa % bb;
+            aa = bb;
+            bb = uldegdel
         }
-        return a;
+        return a * b / aa;
     }
-
-    function lcm(a, b) {
-        return (a * b) / gcd(a, b);
-    }
-
-    function hbye(arr) {
-        return arr.reduce((acc, num) => lcm(acc, num), 1);
-    }
-
-    console.log(hbye([1, 6, 7, 3, 2])); 
-    console.log(gcd(30,120));
-
+    alert("hamgiin baga yoronhii huvaagdagch ni : " + temp);
 }
